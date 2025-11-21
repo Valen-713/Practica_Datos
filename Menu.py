@@ -9,7 +9,8 @@ Agregar = Datos()
 while True:
     print("1.Agregar")
     print("2.Consultar")
-    print("3.Salir")   
+    print("3.Modificar")
+    print("4.Salir")   
     opcion = input("Selecciona una opcion: ")
 
 #Se crea la opcion 1 donde se puede digitar los datos de cada persona
@@ -26,6 +27,7 @@ while True:
     elif opcion == '2':
         cedula = int(input("Ingrese la cedula a consultar: "))
         resultado = GD.Consultar_Datos(cedula)
+        
 
 #Se imprime los resultados
         if resultado:
@@ -36,7 +38,10 @@ while True:
             print(f"Correo: {resultado.Correo}")
         else:
             print("No se encontró un registro con esa cédula.")
-
+#................................................
+    elif opcion == '3':
+        cedula = int(input("Ingrese la cedula del usuario que desea modificar: "))
+        resultado = GD.Modificar_Datos(cedula)
 
 #Se crea la opcion 3, sale del menu        
     elif opcion =="3": 
