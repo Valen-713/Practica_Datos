@@ -23,6 +23,19 @@ class Gestion_Datos:
                 for datos in self.ListaDatos:
                         if datos.Cedula == Cedula:
                                 return datos
+                        
+        def Modificar_Datos(self, cedula):
+                if len(self.listaDatos) == 0:
+                        return "La lista está vacía."
+                for datos in self.listaDatos:
+                        if datos.cedula == cedula:
+                                print("Datos encontrados:")
+                                print(f"Nombre: {datos.nombre}")
+                                print(f"Apellido: {datos.apellido}")
+                                print(f"Edad: {datos.edad}")
+                                print(f"Correo: {datos.correo}")
+                                print(f"Cédula: {datos.cedula}")
+                
         
         
         
