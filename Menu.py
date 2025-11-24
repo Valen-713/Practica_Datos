@@ -4,13 +4,15 @@ from Gestion_Datos import Gestion_Datos
 #Instancias funciones
 GD = Gestion_Datos()
 Agregar = Datos()
+Eliminar = Datos()
 
 #Creacion de menu a utilizar
 while True:
     print("1.Agregar")
     print("2.Consultar")
     print("3.Modificar")
-    print("4.Salir")   
+    print("4.Eliminar")
+    print("5.Salir")   
     opcion = input("Selecciona una opcion: ")
 
 #Se crea la opcion 1 donde se puede digitar los datos de cada persona
@@ -36,15 +38,20 @@ while True:
             print(f"Apellido: {resultado.Apellido}")
             print(f"Edad: {resultado.Edad}")
             print(f"Correo: {resultado.Correo}")
+            print(f"Cedula: {resultado.Cedula}")
         else:
             print("No se encontró un registro con esa cédula.")
-#................................................
+#Se crea la opcion 3 la cual ejecuta la funcion de modificar
     elif opcion == '3':
         cedula = int(input("Ingrese la cedula del usuario que desea modificar: "))
         resultado = GD.Modificar_Datos(cedula)
+#Se crea la opcion 4, esta permite eliminar un registro
+    elif opcion == "4":
+        cedula = int(input("Ingrese la cedula del usuario que desea eliminar: "))
+        GD.Eliminar_Datos(cedula) 
 
-#Se crea la opcion 3, sale del menu        
-    elif opcion =="3": 
+#Se crea la opcion 5, sale del menu        
+    elif opcion =="5": 
         print("Salida")
         break      
     else:
